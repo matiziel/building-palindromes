@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "building-palindromes", "building-palindromes\building-palindromes.csproj", "{0B0E0CA2-A903-4FD2-B7DD-600A61DA2896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "building-palindromes", "building-palindromes\building-palindromes.csproj", "{0B0E0CA2-A903-4FD2-B7DD-600A61DA2896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{E8D2BD96-C8A1-433F-B059-48FC6FAB2973}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0B0E0CA2-A903-4FD2-B7DD-600A61DA2896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B0E0CA2-A903-4FD2-B7DD-600A61DA2896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B0E0CA2-A903-4FD2-B7DD-600A61DA2896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D2BD96-C8A1-433F-B059-48FC6FAB2973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D2BD96-C8A1-433F-B059-48FC6FAB2973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D2BD96-C8A1-433F-B059-48FC6FAB2973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D2BD96-C8A1-433F-B059-48FC6FAB2973}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

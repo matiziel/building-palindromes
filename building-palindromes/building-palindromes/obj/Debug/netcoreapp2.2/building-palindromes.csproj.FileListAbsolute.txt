@@ -1,0 +1,10 @@
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\obj\Debug\netcoreapp2.2\building-palindromes.csprojAssemblyReference.cache
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\obj\Debug\netcoreapp2.2\building-palindromes.AssemblyInfoInputs.cache
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\obj\Debug\netcoreapp2.2\building-palindromes.AssemblyInfo.cs
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\bin\Debug\netcoreapp2.2\building-palindromes.deps.json
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\bin\Debug\netcoreapp2.2\building-palindromes.runtimeconfig.json
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\bin\Debug\netcoreapp2.2\building-palindromes.runtimeconfig.dev.json
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\bin\Debug\netcoreapp2.2\building-palindromes.dll
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\bin\Debug\netcoreapp2.2\building-palindromes.pdb
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\obj\Debug\netcoreapp2.2\building-palindromes.dll
+D:\Informatyka\C#\AAL_projekt\building-palindromes\building-palindromes\building-palindromes\obj\Debug\netcoreapp2.2\building-palindromes.pdb
