@@ -10,7 +10,8 @@ namespace building_palindromes
     {
         static void Main(string[] args)
         {
-            var results = new Dictionary<int, double>();
+            var resultsKmp = new Dictionary<int, double>();
+            var resultsBetterNaive = new Dictionary<int, double>();
             try
             { 
                 using (StreamReader sr = new StreamReader(@"../../../DataFile.txt"))
@@ -23,13 +24,23 @@ namespace building_palindromes
                         string s2 = sr.ReadLine();
                         if (s2 == null)
                             break;
-                        var test = new KMPPalindromes("fds", "jdfh");
-                        results[s1.Length] = MeasureAlgorithTime(test.GetLongestPalindrome);
+                        var testKmp = new KMPPalindromes(s1, s2);
+                        var testBetterNaive = new QuiteBetterNaivePalindromes(s1, s2);
+                        resultsKmp[s1.Length] = MeasureAlgorithTime(testKmp.GetLongestPalindrome);
+                        resultsKmp[s1.Length] = MeasureAlgorithTime(testBetterNaive.GetLongestPalindrome);
                     }
                 }
-                using (StreamWriter outputFile = new StreamWriter(@"../../../Results.txt"))
+                using (StreamWriter outputFile = new StreamWriter(@"../../../ResultsKmp.txt"))
                 {
-                    foreach (var line in results)
+                    foreach (var line in resultsKmp)
+                    {
+                        outputFile.WriteLine(line.Key);
+                        outputFile.WriteLine(line.Value);
+                    }
+                }
+                using (StreamWriter outputFile = new StreamWriter(@"../../../ResultsBetterNaive.txt"))
+                {
+                    foreach (var line in resultsBetterNaive)
                     {
                         outputFile.WriteLine(line.Key);
                         outputFile.WriteLine(line.Value);

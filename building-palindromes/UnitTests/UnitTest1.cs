@@ -15,6 +15,7 @@ namespace UnitTests
         [InlineData("kf", "fkiiikf", "fkiiikf")]
         [InlineData("fds", "sdf", "fdssdf")]
         [InlineData("sdf", "fds", "fdssdf")]
+        [InlineData("jdfkhiss", "fdih", "hissih")]
         public void GivenToStrings_GetLongestPalindrome_KMPPalindromes(string first, string second, string correctResult)
         {
             var test = new KMPPalindromes(first, second);
@@ -31,6 +32,7 @@ namespace UnitTests
         [InlineData("kf", "fkiiikf", "fkiiikf")]
         [InlineData("fds", "sdf", "fdssdf")]
         [InlineData("sdf", "fds", "fdssdf")]
+        [InlineData("jdfkhiss", "fdih", "hissih")]
         public void GivenToStrings_GetLongestPalindrome_QuiteBetterNaivePalindromes(string first, string second, string correctResult)
         {
             var test = new QuiteBetterNaivePalindromes(first, second);
