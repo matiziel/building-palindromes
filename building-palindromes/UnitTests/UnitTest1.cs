@@ -1,6 +1,5 @@
-using System;
-using Xunit;
 using building_palindromes;
+using Xunit;
 
 namespace UnitTests
 {
@@ -10,13 +9,29 @@ namespace UnitTests
         [InlineData("jdfh", "fds", "dfhfd")]
         [InlineData("fds", "jdfh", "dfhfd")]
         [InlineData("jhdfkiikfaz", "jdh", "hdfkiikfdh")]
-        [InlineData( "jdh", "jhdfkiikfaz", "hdfkiikfdh")]
+        [InlineData("jdh", "jhdfkiikfaz", "hdfkiikfdh")]
         [InlineData("jhdfkiikfdhaz", "ikf", "fkiiikf")]
         [InlineData("ikf", "jhdfkiikfdhaz", "fkiiikf")]
         [InlineData("fds", "sdf", "fdssdf")]
-        public void GivenToStrings_GetLongestPalindrome(string first, string second, string correctResult)
+        [InlineData("sdf", "fds", "fdssdf")]
+        public void GivenToStrings_GetLongestPalindrome_KMPPalindromes(string first, string second, string correctResult)
         {
-            var test = new BuildingPalindromes(first, second);
+            var test = new KMPPalindromes(first, second);
+            Assert.Equal(correctResult, test.GetLongestPalindrome());
+        }
+
+        [Theory]
+        [InlineData("jdfh", "fds", "dfhfd")]
+        [InlineData("fds", "jdfh", "dfhfd")]
+        [InlineData("jhdfkiikfaz", "jdh", "hdfkiikfdh")]
+        [InlineData("jdh", "jhdfkiikfaz", "hdfkiikfdh")]
+        [InlineData("jhdfkiikfdhaz", "ikf", "fkiiikf")]
+        [InlineData("ikf", "jhdfkiikfdhaz", "fkiiikf")]
+        [InlineData("fds", "sdf", "fdssdf")]
+        [InlineData("sdf", "fds", "fdssdf")]
+        public void GivenToStrings_GetLongestPalindrome_QuiteBetterNaivePalindromes(string first, string second, string correctResult)
+        {
+            var test = new QuiteBetterNaivePalindromes(first, second);
             Assert.Equal(correctResult, test.GetLongestPalindrome());
         }
     }

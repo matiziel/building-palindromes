@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading;
 
 namespace building_palindromes
 {
@@ -8,7 +7,7 @@ namespace building_palindromes
     {
         static void Main(string[] args)
         {
-            var test = new BuildingPalindromes("fds", "jdfh");
+            var test = new KMPPalindromes("fds", "jdfh");
             Console.WriteLine(test.GetLongestPalindrome());
             Console.WriteLine(MeasureAlgorithTime(test.GetLongestPalindrome));
         }

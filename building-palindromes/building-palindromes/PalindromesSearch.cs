@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace building_palindromes
 {
-    class PalindromeSearch
+    public class PalindromeSearch
     {
         public string[] PalindromesAfter { get; private set; }
         public string[] PalindromesBefore { get; private set; }

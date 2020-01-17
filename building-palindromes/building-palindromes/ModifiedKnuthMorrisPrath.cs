@@ -52,7 +52,7 @@ namespace building_palindromes
             sb.Append(s3);
             return sb.ToString();
         }
-        
+
         private static string ReverseString(string input)
         {
             return new string(input.Reverse().ToArray());
