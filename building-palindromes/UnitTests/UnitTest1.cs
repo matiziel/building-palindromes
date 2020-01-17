@@ -11,7 +11,7 @@ namespace UnitTests
         [InlineData("fds", "jdfh", "dfhfd")]
         [InlineData("jhdfkiikfaz", "jdh", "hdfkiikfdh")]
         [InlineData( "jdh", "jhdfkiikfaz", "hdfkiikfdh")]
-        [InlineData("jhdfkiikfdhaz", "ikf", "fkiiikf")]
+        [InlineData("kf", "fkiiikf", "fkiiikf")]
         [InlineData("ikf", "jhdfkiikfdhaz", "fkiiikf")]
         [InlineData("fds", "sdf", "fdssdf")]
         public void GivenToStrings_GetLongestPalindrome(string first, string second, string correctResult)
