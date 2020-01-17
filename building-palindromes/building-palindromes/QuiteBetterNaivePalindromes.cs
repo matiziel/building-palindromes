@@ -6,12 +6,8 @@ namespace building_palindromes
 {
     public class QuiteBetterNaivePalindromes : BuildingPalindromes
     {
-        public QuiteBetterNaivePalindromes(string first, string second) : base(first, second)
-        {
-            
-           
-        }
-
+        public QuiteBetterNaivePalindromes(string first, string second) : base(first, second) { }
+        
         public override string GetLongestPalindrome()
         {
             SwapIfSecondIsLonger();
