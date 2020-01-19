@@ -3,11 +3,17 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace building_palindromes
 {
     class Program
     {
+        protected static string ReverseString(string input)
+        {
+            return new string(input.Reverse().ToArray());
+        }
+
         static void Main(string[] args)
         {
             var resultsKmp = new Dictionary<int, double>();
@@ -24,10 +30,13 @@ namespace building_palindromes
                         string s2 = sr.ReadLine();
                         if (s2 == null)
                             break;
+                        s1 = s1.Trim();
+                        s2 = s2.Trim();
                         var testKmp = new KMPPalindromes(s1, s2);
                         var testBetterNaive = new QuiteBetterNaivePalindromes(s1, s2);
                         resultsKmp[s1.Length] = MeasureAlgorithTime(testKmp.GetLongestPalindrome);
-                        resultsKmp[s1.Length] = MeasureAlgorithTime(testBetterNaive.GetLongestPalindrome);
+                        resultsBetterNaive[s1.Length] = MeasureAlgorithTime(testBetterNaive.GetLongestPalindrome);
+                        Console.WriteLine();
                     }
                 }
                 using (StreamWriter outputFile = new StreamWriter(@"../../../ResultsKmp.txt"))

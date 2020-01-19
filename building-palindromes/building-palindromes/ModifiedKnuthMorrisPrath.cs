@@ -5,7 +5,7 @@ using System.Text;
 
 namespace building_palindromes
 {
-    static class ModifiedKnuthMorrisPrath
+    public static class ModifiedKnuthMorrisPrath
     {
         public static List<string> GetAllMatches(string input, PalindromeSearch inputPalindromes, string pattern)
         {
@@ -21,14 +21,14 @@ namespace building_palindromes
                 if (q == pattern.Length)
                 {
                     palindromes.Add(BuildString(pattern, inputPalindromes.PalindromesAfter[i + 1], ReverseString(pattern)));     //add palindrome form next position
-                    palindromes.Add(BuildString(ReverseString(pattern), inputPalindromes.PalindromesBefore[i - pattern.Length + 1], pattern)); //add palindrome form previous position
+                    palindromes.Add(BuildString(ReverseString(pattern), inputPalindromes.PalindromesBefore[i - pattern.Length + 1 ], pattern)); //add palindrome form previous position
 
                     q = prefixArray[q - 1];
                 }
             }
             return palindromes;
         }
-        private static int[] ComputePrefixFunction(string pattern)
+        public  static int[] ComputePrefixFunction(string pattern)
         {
             int[] prefixArray = new int[pattern.Length];
             prefixArray[0] = 0;
