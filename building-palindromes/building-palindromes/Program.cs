@@ -9,6 +9,7 @@ namespace building_palindromes
 {
     class Program
     {
+        private static Random random = new Random();
         protected static string ReverseString(string input)
         {
             return new string(input.Reverse().ToArray());
@@ -16,45 +17,43 @@ namespace building_palindromes
 
         static void Main(string[] args)
         {
-            var resultsKmp = new Dictionary<int, double>();
-            var resultsBetterNaive = new Dictionary<int, double>();
+
             try
-            { 
-                using (StreamReader sr = new StreamReader(@"../../../DataFile.txt"))
+            {
+                for (int k = 0; k < 10; k++)
                 {
-                    while (true)
+                    var resultsKmp = new Dictionary<int, double>();
+                    var resultsBetterNaive = new Dictionary<int, double>();
+                    for (int i = 1; i <= 10; i++)
                     {
-                        string s1 = sr.ReadLine();
-                        if (s1 == null)
-                            break;
-                        string s2 = sr.ReadLine();
-                        if (s2 == null)
-                            break;
-                        s1 = s1.Trim();
-                        s2 = s2.Trim();
+                        string s1 = RandomString(i * 100);
+                        string s2 = RandomString(i * 100);
                         var testKmp = new KMPPalindromes(s1, s2);
                         var testBetterNaive = new QuiteBetterNaivePalindromes(s1, s2);
                         resultsKmp[s1.Length] = MeasureAlgorithTime(testKmp.GetLongestPalindrome);
                         resultsBetterNaive[s1.Length] = MeasureAlgorithTime(testBetterNaive.GetLongestPalindrome);
-                        Console.WriteLine();
+                        //Console.WriteLine()
                     }
-                }
-                using (StreamWriter outputFile = new StreamWriter(@"../../../ResultsKmp.txt"))
-                {
-                    foreach (var line in resultsKmp)
+                    using (StreamWriter outputFile = new StreamWriter($@"../../..//results/ResultsKmp{k}.txt"))
                     {
-                        outputFile.WriteLine(line.Key);
-                        outputFile.WriteLine(line.Value);
+                        foreach (var line in resultsKmp)
+                        {
+                            outputFile.WriteLine(line.Key);
+                            outputFile.WriteLine(line.Value);
+                        }
                     }
-                }
-                using (StreamWriter outputFile = new StreamWriter(@"../../../ResultsBetterNaive.txt"))
-                {
-                    foreach (var line in resultsBetterNaive)
+                    using (StreamWriter outputFile = new StreamWriter($@"../../../results/ResultsBetterNaive{k}.txt"))
                     {
-                        outputFile.WriteLine(line.Key);
-                        outputFile.WriteLine(line.Value);
+                        foreach (var line in resultsBetterNaive)
+                        {
+                            outputFile.WriteLine(line.Key);
+                            outputFile.WriteLine(line.Value);
+                        }
                     }
+                    Console.WriteLine(k);
+
                 }
+
             }
             catch (IOException e)
             {
@@ -71,9 +70,17 @@ namespace building_palindromes
             stopWatch.Start();
             var s1 = algorithm();
             stopWatch.Stop();
-            Console.WriteLine(s1);
+            //Console.WriteLine(s1);
             // Get the elapsed time as a TimeSpan value.
             return stopWatch.Elapsed.TotalMilliseconds;
+        }
+
+        
+        private static string RandomString(int length)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyz";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }
